@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free online Unit Converter by UnitConverter.com. Convert length, weight, temperature, area, volume, time, speed, data, energy, and pressure instantly. Accurate formulas, examples, and SEO-friendly tools.">
+  <meta name="keywords" content="unit converter, cm to inch, kg to lbs, celsius to fahrenheit, length converter, weight converter, temperature converter">
+  <meta name="author" content="Yusuf Jamshed">
+  <title>Unit Converter – Free Online Conversion Tool | UnitConverter.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔄</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">🔄</span>
+        <span class="logo-text">Unit<span>Converter</span>.com</span>
+      </a>
+      <nav class="nav">
+        <a href="#categories" class="nav-link">Categories</a>
+        <a href="#how-it-works" class="nav-link">How it Works</a>
+        <a href="#popular" class="nav-link">Popular</a>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#categories" class="mobile-nav-link">Categories</a>
+    <a href="#how-it-works" class="mobile-nav-link">How it Works</a>
+    <a href="#popular" class="mobile-nav-link">Popular</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Convert Any Unit <span class="gradient-text">Instantly</span></h1>
+        <p class="hero-sub">Accurate, fast, and free unit conversions for length, weight, temperature, area, volume, time, speed, data, energy & pressure. Mobile-first & SEO optimized.</p>
+        <div class="search-box">
+          <input type="text" id="globalSearch" placeholder="Search conversions e.g. kg to lbs, cm to inch..." autocomplete="off">
+          <button id="searchBtn" class="search-btn">Search</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>10+</strong> Categories</div>
+          <div class="stat"><strong>80+</strong> Units</div>
+          <div class="stat"><strong>100%</strong> Client-side</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Converter -->
+  <section class="converter-section" id="converter">
+    <div class="container">
+      <div class="converter-card">
+        <div class="category-tabs" id="categoryTabs"></div>
+
+        <div class="converter-body">
+          <div class="unit-row">
+            <div class="input-group">
+              <label for="fromValue">From</label>
+              <input type="number" id="fromValue" value="1" step="any" inputmode="decimal">
+              <select id="fromUnit"></select>
+            </div>
+
+            <button class="swap-btn" id="swapBtn" title="Swap units">⇄</button>
+
+            <div class="input-group">
+              <label for="toValue">To</label>
+              <input type="number" id="toValue" readonly>
+              <select id="toUnit"></select>
+            </div>
+          </div>
+
+          <div class="result-actions">
+            <button class="action-btn" id="copyBtn">📋 Copy Result</button>
+            <button class="action-btn" id="clearBtn">🗑️ Clear</button>
+          </div>
+
+          <div class="formula-box" id="formulaBox">
+            <h3>Formula</h3>
+            <p id="formulaText">Select units to see the conversion formula.</p>
+          </div>
+
+          <div class="examples-box" id="examplesBox">
+            <h3>Quick Examples</h3>
+            <div class="examples-list" id="examplesList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Grid -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <h2 class="section-title">All Conversion Categories</h2>
+      <p class="section-sub">Click a category to jump to the converter. Each category supports precise bidirectional conversion.</p>
+      <div class="categories-grid" id="categoriesGrid"></div>
+    </div>
+  </section>
+
+  <!-- Popular Conversions -->
+  <section class="popular-section" id="popular">
+    <div class="container">
+      <h2 class="section-title">Popular Conversions</h2>
+      <p class="section-sub">High-search-volume conversions ready for SEO landing pages.</p>
+      <div class="popular-grid" id="popularGrid"></div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-icon">1️⃣</div>
+          <h3>Choose Category</h3>
+          <p>Select Length, Weight, Temperature or any other category from the tabs or grid.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-icon">2️⃣</div>
+          <h3>Enter Value & Units</h3>
+          <p>Type a number and pick the source and target units. Swap instantly with one click.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-icon">3️⃣</div>
+          <h3>Get Accurate Result</h3>
+          <p>Results calculate in real-time in your browser. Copy, share, or explore related conversions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Note -->
+  <section class="seo-note">
+    <div class="container">
+      <div class="seo-card">
+        <h2>Built for SEO & Scale</h2>
+        <p>This is <strong>Unit Converter v1</strong>. In production we expand into dedicated long-tail pages such as:</p>
+        <ul class="seo-list">
+          <li>/cm-to-inch/ &nbsp;•&nbsp; /inch-to-cm/</li>
+          <li>/kg-to-lbs/ &nbsp;•&nbsp; /lbs-to-kg/</li>
+          <li>/celsius-to-fahrenheit/ &nbsp;•&nbsp; /fahrenheit-to-celsius/</li>
+          <li>/km-to-miles/ &nbsp;•&nbsp; /meters-to-feet/</li>
+          <li>/ml-to-cups/ &nbsp;•&nbsp; and hundreds more</li>
+        </ul>
+        <p>Each page includes formula, worked examples, FAQ schema, and internal linking for maximum organic reach while remaining useful and non-thin.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">🔄</span>
+          <span class="logo-text">Unit<span>Converter</span>.com</span>
+        </div>
+        <p>Fast, accurate, privacy-friendly unit conversions. All calculations happen in your browser.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Categories</h4>
+        <a href="#categories">Length</a>
+        <a href="#categories">Weight</a>
+        <a href="#categories">Temperature</a>
+        <a href="#categories">Area</a>
+        <a href="#categories">Volume</a>
+      </div>
+      <div class="footer-links">
+        <h4>More</h4>
+        <a href="#popular">Popular Conversions</a>
+        <a href="#how-it-works">How it Works</a>
+        <a href="#converter">Converter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 UnitConverter.com — All rights reserved.</p>
+        <p class="creator">Last page created by <strong>Yusuf Jamshed</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
